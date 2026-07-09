@@ -1,0 +1,10 @@
+---
+permalink: /syndication.json
+eleventyExcludeFromCollections: true
+---
+[
+{%- for item in collections.writing %}
+{%- set absUrl = item.url | absoluteUrl(site.url) %}
+  {"id": {{ absUrl | dump | safe }}, "url": {{ absUrl | dump | safe }}, "date": {{ (item.date | isoDate) | dump | safe }}, "isNote": {{ "true" if item.data.type == "note" else "false" }}, "title": {{ (item.data.title or "") | dump | safe }}, "text": {{ (item.templateContent | plain) | dump | safe }}}{{ "," if not loop.last }}
+{%- endfor %}
+]

@@ -1,0 +1,9 @@
+---
+layout: base.njk
+---
+<article class="entry entry-post">
+    <p class="entry-meta"><span class="tag tag-post">post</span> <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time></p>
+    <h2 class="entry-title">{{ title }}</h2>
+    <div class="entry-body prose">{{ content | safe }}</div>
+</article>
+<p class="back"><a href="/">&larr; all writing</a></p>

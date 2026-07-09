@@ -1,0 +1,6 @@
+{
+  "layout": "post.njk",
+  "tags": ["writing"],
+  "type": "post",
+  "permalink": "/{{ page.fileSlug }}/"
+}

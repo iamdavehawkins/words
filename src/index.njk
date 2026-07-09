@@ -1,0 +1,35 @@
+---
+layout: base.njk
+---
+<div class="panel panel-hero">
+    <p class="panel-title">get these in your inbox</p>
+    <p class="panel-subtitle">new songs, videos, and infrequent musings, without a social media algorithm in between us.</p>
+    <form action="https://buttondown.com/api/emails/embed-subscribe/iamdavehawkins" method="post" target="popupwindow" onsubmit="window.open('https://newsletter.iamdavehawkins.com', 'popupwindow')">
+        <input type="email" name="email" placeholder="your@email.com">
+        <input type="submit" value="join the list">
+        <input type="hidden" value="1" name="embed">
+    </form>
+</div>
+
+<div class="timeline">
+{%- if collections.writing.length == 0 %}
+<p class="empty">nothing here yet. the machine is warm. first words incoming.</p>
+{%- endif %}
+{%- for item in collections.writing %}
+    {%- if item.data.type == "note" %}
+    <article class="entry entry-note">
+        <div class="entry-body">{{ item.templateContent | safe }}</div>
+        <p class="entry-meta"><span class="tag tag-note">note</span> <a href="{{ item.url }}"><time datetime="{{ item.date | isoDate }}">{{ item.date | readableDate }}</time></a></p>
+    </article>
+    {%- else %}
+    <article class="entry entry-post">
+        <p class="entry-meta"><span class="tag tag-post">post</span> <time datetime="{{ item.date | isoDate }}">{{ item.date | readableDate }}</time></p>
+        <h2 class="entry-title"><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
+        {%- if item.data.description %}
+        <p class="post-excerpt">{{ item.data.description }}</p>
+        {%- endif %}
+        <p class="read-more"><a href="{{ item.url }}">read more &rarr;</a></p>
+    </article>
+    {%- endif %}
+{%- endfor %}
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} &middot; {% endif %}{{ site.title }} words</title>
+    <meta name="description" content="{{ description or site.tagline }}">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="alternate" type="application/atom+xml" href="/feed.xml" title="{{ site.title }} words">
+    <link rel="icon" href="data:,">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="99efd3af-3c2e-490e-adc0-aa7a12c5f68a"></script>
+</head>
+<body>
+
+<header class="masthead">
+    <h1><a href="/">dave hawkins</a> <span class="mast-sub">words</span></h1>
+    <p class="tagline">{{ site.tagline }}</p>
+    <p class="mast-links"><a href="/">all</a> &middot; <a href="/feed.xml">rss</a> &middot; <a href="https://iamdavehawkins.com" target="_blank" rel="noopener">home</a> &middot; <a href="https://music.iamdavehawkins.com" target="_blank" rel="noopener">music</a></p>
+</header>
+
+<main>
+{{ content | safe }}
+</main>
+
+<footer class="site-footer">
+    <p>no algorithm in between us. <a href="/feed.xml">follow along by rss</a> or <a href="https://newsletter.iamdavehawkins.com" target="_blank" rel="noopener">get it by email</a>.</p>
+    <p class="fine">written by hand in denver, co.</p>
+</footer>
+
+</body>
+</html>

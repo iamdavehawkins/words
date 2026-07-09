@@ -1,0 +1,15 @@
+{
+  "name": "words",
+  "version": "1.0.0",
+  "private": true,
+  "description": "dave hawkins - words. a small POSSE microblog.",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "syndicate": "node scripts/syndicate.js"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0"
+  }
+}
